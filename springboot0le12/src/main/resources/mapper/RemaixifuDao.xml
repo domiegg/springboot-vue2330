@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.RemaixifuDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.RemaixifuEntity" id="remaixifuMap">
+        <result property="fuzhuangbianhao" column="fuzhuangbianhao"/>
+        <result property="fuzhuangmingcheng" column="fuzhuangmingcheng"/>
+        <result property="huawentuan" column="huawentuan"/>
+        <result property="fuzhuangkuanshi" column="fuzhuangkuanshi"/>
+        <result property="mianliaoleibie" column="mianliaoleibie"/>
+        <result property="yimenjin" column="yimenjin"/>
+        <result property="chima" column="chima"/>
+        <result property="fuzhuangjiage" column="fuzhuangjiage"/>
+        <result property="fuzhuangxiangqing" column="fuzhuangxiangqing"/>
+        <result property="thumbsupnum" column="thumbsupnum"/>
+        <result property="crazilynum" column="crazilynum"/>
+        <result property="clicktime" column="clicktime"/>
+        <result property="clicknum" column="clicknum"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.RemaixifuVO" >
+		SELECT * FROM remaixifu  remaixifu         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.RemaixifuVO" >
+		SELECT  remaixifu.* FROM remaixifu  remaixifu 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.RemaixifuView" >
+
+		SELECT  remaixifu.* FROM remaixifu  remaixifu 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.RemaixifuView" >
+		SELECT * FROM remaixifu  remaixifu <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
